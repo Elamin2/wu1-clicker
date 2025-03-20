@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Spel</title>
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+
+<body>
+ 
+<button id="clicker-button" type="button" >
+klicka på mig
+</button>
+<p id="counter">K-licks: 0</p>
+<script>
+    let clicks = 0
+    const button = document.querySelector("#clicker-button")
+    const counter = document.querySelector("#counter")
+    button.addEventListener("click", (event) => {
+       clicks += 1 
+       counter.textContent = `K-licks: ${clicks}!`// "K-licks:"+clicks
+    })
+        
+
+</script>
+</body>
+</html>
