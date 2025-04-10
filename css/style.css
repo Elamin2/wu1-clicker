@@ -23,7 +23,7 @@
 }
 
 body {
-    background-color: var(--color-light);
+    background-color:rgb(91, 158, 114);
     color: var(--color-dark);
     font-family: Verdana, Geneva, Tahoma, sans-serifs;
     font-size: var(--step-0);
@@ -39,6 +39,7 @@ h1 {
 /* göm audio, används för att preloada ljudet */
 audio {
     display: url(../audio/632329__audacitier__knock-2.mp3);
+
 }
 
 .container {
@@ -93,7 +94,7 @@ audio {
     grid-area: stack;
     place-self: end;
     padding: var(--space-m-l) 0;
-    color: var(--color-light);
+    color: var(--color-dark);
 }
 
 @media (max-width: 30rem) {
@@ -149,6 +150,26 @@ audio {
     text-transform: uppercase;
     font-weight: 700;
     cursor: pointer;
+
+}
+
+#exist-button {
+    width: var(--space-4xl-5xl);
+    height: var(--space-4xl-5xl);
+    font-size: var(--step-2);
+    background: url('../img/dead.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 2px solid transparent;
+    color: var(--color-light);
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+
+
+
+
+
 
 }
 

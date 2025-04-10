@@ -8,6 +8,7 @@
  * Viktigt: queryselector ger oss ett html element eller flera om det finns.
  */
 const clickerButton = document.querySelector('#game-button');
+const existButton = document.querySelector('#exist-button');
 const moneyTracker = document.querySelector('#money');
 const mpsTracker = document.querySelector('#mps'); // money per second
 const mpcTracker = document.querySelector('#mpc'); // money per click
@@ -24,7 +25,7 @@ const audioAchievement = document.querySelector('#swoosh');
  * Läs mer: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
  */
 let money = 0;
-let moneyPerClick = 5;
+let moneyPerClick = 2;
 let moneyPerSecond = 0;
 let acquiredUpgrades = 0;
 let last = 0;
@@ -52,7 +53,6 @@ let achievements = [
         acquired: false,
     },
     {
-
         description: 'En stjärna',
         requiredClicks: 1000,
         acquired: false,
@@ -84,6 +84,8 @@ clickerButton.addEventListener(
     },
     false
 );
+
+
 
 /* För att driva klicker spelet så kommer vi att använda oss av en metod som heter
  * requestAnimationFrame.
