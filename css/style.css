@@ -25,7 +25,7 @@
 body {
     background-color: var(--color-light);
     color: var(--color-dark);
-    font-family: sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serifs;
     font-size: var(--step-0);
 }
 
@@ -141,7 +141,7 @@ audio {
     width: var(--space-4xl-5xl);
     height: var(--space-4xl-5xl);
     font-size: var(--step-2);
-    background: url('../img/brett-meliti-RgkYMfFopIA-unsplash-removebg-preview.png');
+    background: url('../img/bob.webp');
     background-size: cover;
     background-position: center;
     border: 2px solid transparent;
@@ -149,6 +149,7 @@ audio {
     text-transform: uppercase;
     font-weight: 700;
     cursor: pointer;
+
 }
 
 #game-button:hover {
@@ -180,11 +181,11 @@ audio {
  * meddelanden. Javascript används för att lägga till stilen på meddelandet
  */
 .warning {
-    background-color: palevioletred;
+    background-color: rgb(67, 172, 127);
 }
 
 .success {
-    background-color: mediumspringgreen;
+    background-color: rgb(154, 184, 33);
 }
 
 .achievement {

@@ -24,7 +24,7 @@ const audioAchievement = document.querySelector('#swoosh');
  * Läs mer: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
  */
 let money = 0;
-let moneyPerClick = 1;
+let moneyPerClick = 5;
 let moneyPerSecond = 0;
 let acquiredUpgrades = 0;
 let last = 0;
@@ -37,23 +37,28 @@ let active = false; // exempel för att visa att du kan lägga till klass för a
 
 let achievements = [
     {
-        description: 'Museet är redo att öppna, grattis! ',
+        description: 'Det funkar i allafall! ',
         requiredUpgrades: 1,
         acquired: false,
     },
     {
-        description: 'Nu börjar det likna något, fortsätt gräva!',
-        requiredUpgrades: 10,
+        description: 'Alla börjar nånstans',
+        requiredUpgrades: 15,
         acquired: false,
     },
     {
-        description: 'Klickare, med licens att klicka!',
-        requiredClicks: 10,
+        description: 'Blir lite för bra?',
+        requiredClicks: 150,
         acquired: false,
     },
     {
-        description: 'Tac-2 god!',
-        requiredClicks: 10000,
+
+        description: 'En stjärna',
+        requiredClicks: 1000,
+        acquired: false,
+
+        description: 'Clickare champion',
+        requiredClicks: 50000,
         acquired: false,
     },
 ];
@@ -163,24 +168,30 @@ window.addEventListener('load', (event) => {
  */
 upgrades = [
     {
-        name: 'Sop',
+        name: 'Börjare verktyg',
         cost: 10,
         amount: 1,
     },
     {
-        name: 'Kvalitetsspade',
-        cost: 50,
-        clicks: 2,
-    },
-    {
-        name: 'Skottkärra',
+        name: 'Vanligare verktyg',
         cost: 100,
-        amount: 10,
+        clicks: 10,
     },
     {
-        name: 'Grävmaskin',
-        cost: 1000,
+        name: 'Detta br att använda',
+        cost: 5000,
         amount: 100,
+    },
+    {
+        name: 'Endast pros får ha detta/',
+        cost: 1000,
+        amount: 500,
+
+        name: 'Champion svärd',
+        cost: 999999,
+        amount: 6666,
+
+        
     },
 ];
 
@@ -213,19 +224,19 @@ function createCard(upgrade) {
     } else {
         header.textContent = `${upgrade.name}, +${upgrade.clicks} per klick.`;
     }
-    cost.textContent = `Köp för ${upgrade.cost} benbitar.`;
+    cost.textContent = `Köp för ${upgrade.cost} $.`;
 
     card.addEventListener('click', (e) => {
         if (money >= upgrade.cost) {
             acquiredUpgrades++;
             money -= upgrade.cost;
             upgrade.cost *= 1.5;
-            cost.textContent = 'Köp för ' + upgrade.cost + ' benbitar';
+            cost.textContent = 'Köp för ' + upgrade.cost + '$';
             moneyPerSecond += upgrade.amount ? upgrade.amount : 0;
             moneyPerClick += upgrade.clicks ? upgrade.clicks : 0;
-            message('Grattis du har köpt en uppgradering!', 'success');
+            message('Grattis dina pengar funkar!', 'success');
         } else {
-            message('Du har inte råd.', 'warning');
+            message('Du har inte råd/för dåligt.', 'warning');
         }
     });
 
