@@ -37,6 +37,8 @@ h1 {
     color: white;
 }
 
+p { color: white;}
+
 audio {
     display: url(../audio/632329__audacitier__knock-2.mp3);
 
@@ -81,6 +83,7 @@ audio {
     grid-area: stack;
     width: 100%;
     height: 100%;
+    
 }
 
 .hero img {
@@ -150,6 +153,8 @@ audio {
     text-transform: uppercase;
     font-weight: 700;
     cursor: pointer;
+    font-display: var(--color-dark);
+    text-decoration-color: black;
 
 }
 
@@ -233,6 +238,7 @@ audio {
 
 .card p:not(.title) {
     text-align: end;
+    
 }
 /* klassen används på kortets titel, font-weight: 600 gör fonten fetare, en normal
  * font vikt är oftast 400
