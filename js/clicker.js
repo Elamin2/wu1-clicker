@@ -15,7 +15,8 @@ const mpcTracker = document.querySelector('#mpc'); // money per click
 const upgradesTracker = document.querySelector('#upgrades');
 const upgradeList = document.querySelector('#upgradelist');
 const msgbox = document.querySelector('#msgbox');
-const audioAchievement = document.querySelector('#swoosh');
+const audioAchievement = document.querySelector('#swoosh')
+const clickAudio = document.querySelector('#click-audio');
 
 /* Följande variabler använder vi för att hålla reda på hur mycket pengar som
  * spelaren, har och tjänar.
@@ -44,7 +45,7 @@ let achievements = [
     },
     {
         description: 'Alla börjar nånstans',
-        requiredUpgrades: 15,
+        requiredUpgrades: 10,
         acquired: false,
     },
     {
@@ -84,6 +85,38 @@ clickerButton.addEventListener(
     },
     false
 );
+existButton.addEventListener(
+    'click',
+    () => {
+        try {
+            window.close();
+        } catch (e) {
+            
+        }
+        
+    },
+    false
+        
+
+);
+
+clickAudio.querySelector(
+
+    'click',
+    () => {
+        money += moneyPerClick;
+        numberOfClicks += 1;
+
+        playsound(clickAudio);
+
+        //det funkar eller jag hör saker
+        
+    });
+
+
+
+
+
 
 
 
@@ -236,7 +269,7 @@ function createCard(upgrade) {
             cost.textContent = 'Köp för ' + upgrade.cost + '$';
             moneyPerSecond += upgrade.amount ? upgrade.amount : 0;
             moneyPerClick += upgrade.clicks ? upgrade.clicks : 0;
-            message('Grattis dina pengar funkar!', 'success');
+            message('Köpt!', 'success');
         } else {
             message('Du har inte råd/för dåligt.', 'warning');
         }
@@ -266,3 +299,6 @@ function message(text, type) {
         p.parentNode.removeChild(p);
     }, 2000);
 }
+
+
+

@@ -34,9 +34,9 @@ h1 {
     text-transform: uppercase;
     font-weight: 700;
     max-width: 20ch;
+    color: white;
 }
 
-/* göm audio, används för att preloada ljudet */
 audio {
     display: url(../audio/632329__audacitier__knock-2.mp3);
 
